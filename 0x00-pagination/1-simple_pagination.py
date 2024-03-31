@@ -34,6 +34,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Simple pagination
+        """
         if not (isinstance(page, int) and isinstance(page_size, int)):
             raise AssertionError
         elif page <= 0 or page_size <= 0:
