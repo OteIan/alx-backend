@@ -37,22 +37,13 @@ class Server:
         """
         Simple pagination
         """
-        if not (isinstance(page, int) and isinstance(page_size, int)):
-            raise AssertionError
-        elif page <= 0 or page_size <= 0:
-            raise AssertionError
+        assert type(page) == int and type(page_size) == int
+        assert page > 0 and page_size > 0
 
-        res = index_range(page, page_size)
+        start, end = index_range(page, page_size)
 
-        data = []
+        data = self.dataset()
 
-        with open(self.DATA_FILE, 'r') as csv_file:
-            csv_reader = csv.reader(csv_file)
-            next(csv_reader)
-            for i, row in enumerate(csv_reader, start=1):
-                if res[0] <= i <= res[1]:
-                    data.append(row)
-                elif i > res[1]:
-                    break
-
-        return data
+        if start > len(data):
+            return []
+        return data[start:end]
