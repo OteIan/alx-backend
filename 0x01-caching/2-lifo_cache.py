@@ -26,7 +26,7 @@ class LIFOCache(BaseCaching):
 
             self.last_key = key
 
-    def get(self, key, item):
+    def get(self, key):
         """
         Returns the value of key
         """
