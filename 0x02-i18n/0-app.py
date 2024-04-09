@@ -12,7 +12,7 @@ def basic_route() -> str:
     """
     Basic route
     """
-    return render_template("0-index.html")
+    return render_template("0-index.html",)
 
 
 if __name__ == "__main__":
