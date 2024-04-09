@@ -23,7 +23,7 @@ babel = Babel(app)
 
 
 @app.route('/')
-def basic_route():
+def basic_route() -> str:
     """
     Basic route
     """
