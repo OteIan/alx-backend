@@ -4,8 +4,6 @@ Basic flask app
 """
 from flask import Flask, render_template
 from flask_babel import Babel
-from werkzeug.utils import cached_property as locked_cached_property
-
 
 
 class Config:
