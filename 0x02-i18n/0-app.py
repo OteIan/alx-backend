@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def basic_route() -> str:
+def basic_route():
     """
     Basic route
     """
@@ -16,4 +16,4 @@ def basic_route() -> str:
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
